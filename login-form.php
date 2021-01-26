@@ -16,7 +16,7 @@
     }
 </style>
 <body>
-<form method="POST">
+<form method="get">
     <div class="login">
         <h2>Login</h2>
         <input type="text" name="username" size="30"  placeholder="username"/>
@@ -27,9 +27,9 @@
 </body>
 </html>
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $username = $_GET["username"];
+    $password = $_GET["password"];
 
     if ($username === "admin" && $password === "admin") {
         echo "<h2>Welcome <span style='color:red'>" .$username. "</span> to website</h2>";
